@@ -13,7 +13,7 @@ pipeline {
         stage("Initialize") {
             steps {
                 script {
-                    Initialize('dev')
+                    print('dev')
                 }
             }
         }
