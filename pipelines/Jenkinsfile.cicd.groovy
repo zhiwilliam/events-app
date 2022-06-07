@@ -9,12 +9,12 @@ pipeline {
             customWorkspace "./workspace/${BUILD_TAG}"
         }
     }
-}
-stages {
-    stage("Initialize") {
-        steps {
-            script {
-                Initialize('dev')
+    stages {
+        stage("Initialize") {
+            steps {
+                script {
+                    Initialize('dev')
+                }
             }
         }
     }
