@@ -1,10 +1,18 @@
 import Dependencies._
 
+lazy val util = project
+lazy val core = project.dependsOn(util)
+lazy val app = project.dependsOn(core).settings(
+    libraryDependencies ++= zio ++ zHttp ++ zioJson ++ authentication
+  )
+
 ThisBuild / scalaVersion := "2.13.8"
 lazy val compilecheck = taskKey[Unit]("compile and then scalastyle")
 
 lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging)
+  .aggregate(util, core, app)
+  .settings(update / aggregate := false)
   .settings(BuildHelper.stdSettings)
   .settings(
     name := "wzhi",
