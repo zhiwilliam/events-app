@@ -15,7 +15,9 @@ pipeline {
                 script {
                     print("${BUILD_TAG}")
                     print("${env.BRANCH_NAME}")
-                    sh("ls ./workspace")
+                    sh("ls ./")
+                    sh("ls ../")
+                    sh("ls ../../")
                     sh("touch ./workspace/${env.BRANCH_NAME}.data")
                 }
             }
