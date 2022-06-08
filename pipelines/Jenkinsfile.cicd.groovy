@@ -13,7 +13,7 @@ pipeline {
         stage("Initialize") {
             steps {
                 script {
-                    print('dev')
+                    print("${BUILD_TAG}")
                 }
             }
         }
