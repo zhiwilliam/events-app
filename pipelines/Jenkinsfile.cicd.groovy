@@ -14,11 +14,11 @@ pipeline {
             steps {
                 script {
                     print("${BUILD_TAG}")
-                    print("${env.BRANCH_NAME}")
+                    print("${BRANCH_NAME}")
                     sh("ls ./")
                     sh("ls ../")
                     sh("ls ../../")
-                    sh("touch ./workspace/${env.BRANCH_NAME}.data")
+                    sh("touch ../${BRANCH_NAME}.data")
                 }
             }
         }
