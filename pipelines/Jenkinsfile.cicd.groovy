@@ -14,6 +14,9 @@ pipeline {
             steps {
                 script {
                     print("${BUILD_TAG}")
+                    print("${env.BRANCH_NAME}")
+                    sh("ls ./workspace")
+                    sh("touch ./workspace/${env.BRANCH_NAME}.data")
                 }
             }
         }
