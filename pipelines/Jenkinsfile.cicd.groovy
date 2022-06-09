@@ -23,8 +23,12 @@ pipeline {
 
         stage("sbt build") {
             agent { docker { image "hseeberger/scala-sbt:8u222_1.3.5_2.13.1" }}
-            steps {
-                sh "sbt assembly test publish"
+            stages {
+                stage('Compile') {
+                    steps {
+                        sh 'sbt compile'
+                    }
+                }
             }
         }
     }
