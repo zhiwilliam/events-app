@@ -22,7 +22,7 @@ pipeline {
         }
 
         stage("sbt build") {
-            agent { docker { image "hseeberger/scala-sbt:8u222_1.3.5_2.13.1" }}
+            agent { docker { image "wzhi-docker-sbt:0.1.0" }}
             stages {
                 stage('Compile') {
                     steps {
