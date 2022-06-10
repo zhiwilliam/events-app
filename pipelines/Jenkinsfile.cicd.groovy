@@ -24,13 +24,22 @@ pipeline {
         stage("sbt build") {
             agent { docker { 
                 image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2"
-                args "-v /var/jenkins_home:/var/jenkins_home"
                 reuseNode true
             }}
             stages {
                 stage('Compile') {
                     steps {
                         sh 'sbt compile'
+                    }
+                }
+                stage('assembly') {
+                    steps {
+                        sh 'sbt assembly'
+                    }
+                }
+                stage('publish docker') {
+                    steps {
+                        sh 'sbt docker:publishLocal'
                     }
                 }
             }
