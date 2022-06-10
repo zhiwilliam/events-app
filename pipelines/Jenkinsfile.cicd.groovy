@@ -24,7 +24,7 @@ pipeline {
         stage("sbt build") {
             agent { docker { 
                 image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2"
-                args "--volume c:/software/jenkins_home:/var/jenkins_home"
+                args "--volume /var/jenkins_home:/var/jenkins_home"
                 reuseNode true
             }}
             stages {
