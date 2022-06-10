@@ -22,7 +22,7 @@ pipeline {
         }
 
         stage("sbt build") {
-            agent { docker { image "wzhi-docker-sbt:0.1.0" }}
+            agent { docker { image "yoshinorin/docker-sbt:1.6.2" }}
             stages {
                 stage('Compile') {
                     steps {
