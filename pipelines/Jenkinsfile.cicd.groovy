@@ -23,7 +23,7 @@ pipeline {
 
         stage("sbt build") {
             agent { docker { 
-                image "yoshinorin/docker-sbt:latest" 
+                image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2" 
                 reuseNode true
             }}
             stages {
