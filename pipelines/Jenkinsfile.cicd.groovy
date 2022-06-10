@@ -15,7 +15,7 @@ pipeline {
                 script {
                     print("${BUILD_TAG}")
                     print("${env.BRANCH_NAME}")
-                    sh("ls ../")
+                    sh("which docker")
                     sh("touch ../${env.BRANCH_NAME}.data")
                 }
             }
