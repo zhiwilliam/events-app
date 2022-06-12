@@ -30,6 +30,7 @@ pipeline {
             stages {
                 stage('Compile') {
                     steps {
+                        sh 'whoami'
                         sh 'sbt compile'
                     }
                 }
