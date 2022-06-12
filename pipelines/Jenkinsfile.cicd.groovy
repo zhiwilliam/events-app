@@ -30,6 +30,7 @@ pipeline {
             stages {
                 stage('Compile') {
                     steps {
+                        sh 'less /etc/passwd'
                         sh 'sbt compile'
                     }
                 }
