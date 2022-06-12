@@ -25,6 +25,7 @@ lazy val root = (project in file("."))
   .settings(BuildHelper.stdSettings, assemblyOpt)
   .settings(
     name := "wzhi",
+    Compile / mainClass := Some("com.wzhi.Main")
     testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework"),
     libraryDependencies ++= authentication ++ zio ++ zHttp ++ kitten ++ zConfig ++ zioJson ++ zioLog ++ jedis ++ quill
   )
