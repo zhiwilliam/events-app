@@ -23,8 +23,8 @@ pipeline {
 
         stage("sbt build") {
             agent { docker { 
-                //image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2"
-                image "wzhi/sbt-docker:0.1.0"
+                image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2"
+                //image "wzhi/sbt-docker:0.1.0"
                 args "--group-add 0 --memory 4096m -v /usr/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock"
             }}
             stages {
