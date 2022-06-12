@@ -24,8 +24,7 @@ pipeline {
         stage("sbt build") {
             agent { docker { 
                 image "sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2"
-                args "-v /usr/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock"
-                reuseNode true
+                args "--group-add 0 --memory 4096m -v /usr/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock"
             }}
             stages {
                 stage('Compile') {
